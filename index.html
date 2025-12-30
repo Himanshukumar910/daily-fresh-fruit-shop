@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Fresh Fruit Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0fff4;
+    }
+    header {
+      background: #22c55e;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 15px;
+    }
+    .fruit {
+      background: white;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .status {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: white;
+    }
+    .fresh { background: green; }
+    .limited { background: orange; }
+    .out { background: red; }
+  </style>
+</head>
+<body>
+
+<header>🍎 Daily Fresh Fruit Shop</header>
+
+<div class="container">
+  <div class="fruit">
+    <div>Apple – ₹120/kg</div>
+    <div class="status fresh">Fresh</div>
+  </div>
+
+  <div class="fruit">
+    <div>Banana – ₹50/dozen</div>
+    <div class="status limited">Limited</div>
+  </div>
+
+  <div class="fruit">
+    <div>Mango – ₹90/kg</div>
+    <div class="status out">Out of stock</div>
+  </div>
+</div>
+
+</body>
+</html>
