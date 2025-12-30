@@ -1,0 +1,13 @@
+<script>
+const data = JSON.parse(localStorage.getItem("fruitData"));
+if (data) {
+  document.getElementById("admin-data").innerHTML = `
+    <div class="fruit">
+      <div>${data.fruit} – ${data.price}</div>
+      <div class="status ${data.status.toLowerCase()}">
+        ${data.status}
+      </div>
+    </div>
+  `;
+}
+</script>
