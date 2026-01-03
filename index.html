@@ -1,67 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daily Fresh Fruit Shop</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f0fff4;
-    }
-    header {
-      background: #22c55e;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .container {
-      padding: 15px;
-    }
-    .fruit {
-      background: white;
-      padding: 12px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .status {
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 6px;
-      color: white;
-    }
-    .fresh { background: green; }
-    .limited { background: orange; }
-    .out { background: red; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Fresh Fruit Shop</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0fff4;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 70vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url("https://images.unsplash.com/photo-1577234286642-fc512a5f8f11");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  background: white;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* FRUIT LIST */
+.container {
+  padding: 15px;
+}
+
+.fruit {
+  background: white;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.status {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: white;
+}
+
+.fresh { background: green; }
+.limited { background: orange; }
+.out { background: red; }
+
+/* OFFER */
+.offer {
+  margin: 15px;
+  padding: 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #22c55e, #f59e0b);
+  color: white;
+  text-align: center;
+}
+
+/* CONTACT */
+.contact {
+  padding: 20px;
+  text-align: center;
+  background: white;
+}
+</style>
 </head>
+
 <body>
 
-<header>🍎 Daily Fresh Fruit Shop</header>
+<!-- HERO -->
+<div class="hero">
+  <h1>Fresh & Healthy Fruits Everyday</h1>
+  <p>ताज़े फल • सही दाम • भरोसेमंद सेवा</p>
 
-<div class="container">
+  <div class="search-box">
+    <input placeholder="Search for a fruit..." />
+  </div>
+</div>
+
+<!-- FRUITS -->
+<div class="container" id="list">
   <div class="fruit">
     <div>Apple – ₹120/kg</div>
     <div class="status fresh">Fresh</div>
   </div>
-
-  <div class="fruit">
-    <div>Banana – ₹50/dozen</div>
-    <div class="status limited">Limited</div>
-  </div>
-
-  <div class="fruit">
-    <div>Mango – ₹90/kg</div>
-    <div class="status out">Out of stock</div>
-  </div>
 </div>
+
+<!-- OFFER -->
+<div class="offer">
+  ⚡ Special Offer! <br>
+  Free delivery on orders above ₹500
+</div>
+
+<!-- CONTACT -->
+<div class="contact">
+  📍 Gaya Ji, Bihar <br>
+  📞 +91 9102205372
+</div>
+
+<script>
+const saved = localStorage.getItem("fruitText");
+if (saved) {
+  document.getElementById("list").innerHTML = `
+    <div class="fruit">
+      <div>${saved}</div>
+      <div class="status fresh">Updated</div>
+    </div>
+  `;
+}
+</script>
 
 </body>
 </html>
+
