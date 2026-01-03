@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+}
+
+.header {
+  background: #16a34a;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  margin: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #15803d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">🛠 Admin Panel</div>
+
+<div class="card">
+  <label>Fruit Name</label>
+  <input id="fruit" placeholder="Apple">
+
+  <label>Price</label>
+  <input id="price" placeholder="₹120/kg">
+
+  <label>Status</label>
+  <select id="status">
+    <option>Fresh</option>
+    <option>Limited</option>
+    <option>Out of stock</option>
+  </select>
+
+  <button onclick="save()">Save</button>
+</div>
+
+<script>
+function save(){
+  const text =
+    fruit.value + " – " +
+    price.value + " (" +
+    status.value + ")";
+  localStorage.setItem("fruitText", text);
+  alert("Saved successfully");
+}
+</script>
+
+</body>
+</html>
+
