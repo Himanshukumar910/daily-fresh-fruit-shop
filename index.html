@@ -174,19 +174,20 @@ if (saved) {
   left: -5px;
 }
 </style>
+<div style="
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+height: 60px;
+background: white;
+display: flex;
+justify-content: space-around;
+align-items: center;
+box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+z-index: 9999;
+">
 
-<div class="navbar">
-  <a href="index.html">🏠<br>Home</a>
-  <a href="shop.html">🛒<br>Shop</a>
-  <a href="cart.html">🧺<br>Cart <span id="cartCount" class="cart-badge">0</span></a>
-  <a href="orders.html">📦<br>Orders</a>
-  <a href="profile.html">👤<br>Profile</a>
-</div>
-
-<script>
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
-document.getElementById("cartCount").innerText = cart.length;
-</script>
 
 </body>
 </html>
